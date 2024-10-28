@@ -1,23 +1,24 @@
 from models.usuario_models import Usuario
 from repositories.usuario_repositories import UsuarioRepository
 
+
 class UsuarioService:
 
     def __init__(self, repository: UsuarioRepository):
         self.repository = repository
 
-    def criar_usuario(self, nome:str, email:str, senha:str):
+    def criar_usuario(self, nome: str, email: str, senha: str):
         try:
-            
-            usuario = Usuario(nome = nome, email = email, senha = senha)
+
+            usuario = Usuario(nome=nome, email=email, senha=senha)
 
             novo_usuario = self.repository.pesquisar_usuario_por_email(usuario.email)
 
             if novo_usuario:
                 print("usuário ja cadastrado!")
                 return
-            
-            usuario = Usuario(nome = nome, email = email, senha = senha)
+
+            usuario = Usuario(nome=nome, email=email, senha=senha)
 
             self.repository.salvar_usuario(usuario)
             print("Usuario cadastrado com sucesso")

@@ -8,10 +8,10 @@ Criar um CRUD para um usúario:
 - Read (listar todos os usuários / pesquisar um usuário)
 - Update (atualizar dados de um usuário)
 - Delete (excluir um usuário)
-
 No arquivo principal, crie um menu onde seja possivel escolher a acao desejada.
 
     ===SENAI SOLUTION===
+    
 1 - adicionar usuário
 2 - pesquisar usuário
 3 - atualizar dados de um usuário

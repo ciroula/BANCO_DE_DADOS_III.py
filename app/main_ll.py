@@ -1,8 +1,12 @@
 import os
-from services.usuario_services import UsuarioService
-from repositories.usuario_repositories import UsuarioRepository
-from config.database import Session
-from models.usuario_models import Usuario
+from app.services.usuario_services import UsuarioService
+from app.repositories.usuario_repositories import UsuarioRepository
+from app.config.database import Session
+from app.models.usuario_models import Usuario
+import sys
+
+#Adicionna o diretorio 'app' como diretorio padrão.
+sys.path.append(os.path.join(os.path.dirname(__file__),'..'))
 
 
 def main():
@@ -54,7 +58,10 @@ def main():
     def listar_usuarios():
         listar_usuario = service.listar_todos_usuario()
         for usuario in listar_usuario:
-            print(f"Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}")
+            print(
+                f"Nome: {usuario.nome} - Email: {usuario.email} - Senha: {usuario.senha}"
+            )
+
     while True:
         # Solicitando dados para o usuario.
         print(f"\n== Tabela de serviços disponiveis ==")

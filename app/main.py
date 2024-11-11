@@ -1,8 +1,11 @@
 import os
-from services.usuario_services import UsuarioService
-from repositories.usuario_repositories import UsuarioRepository
-from config.database import Session
+from app.services.usuario_services import UsuarioService
+from app.repositories.usuario_repositories import UsuarioRepository
+from app.config.database import Session
+import sys
 
+#Adicionna o diretorio 'app' como diretorio padrão.
+sys.path.append(os.path.join(os.path.dirname(__file__),'..'))
 
 def main():
     session = Session()
